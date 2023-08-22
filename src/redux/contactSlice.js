@@ -4,7 +4,7 @@ import {
   addContactThunk,
   deleteContactThunk,
 } from './ContactAsyncThunk';
-//самый начальный, глобальный state
+//state for friend list
 const defaultState = {
   items: [],
   isLoading: false,
