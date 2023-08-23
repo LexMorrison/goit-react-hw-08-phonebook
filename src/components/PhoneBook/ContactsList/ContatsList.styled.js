@@ -4,6 +4,7 @@ export const ListOfPpl = styled.li`
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: space-between;
 `;
 
 export const DeleteButt = styled.button`

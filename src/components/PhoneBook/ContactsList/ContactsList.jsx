@@ -18,7 +18,7 @@ function ContactsList() {
           return (
             <ListOfPpl key={contact.id}>
               <p>
-                {contact.name}: {contact.phone}
+                {contact.name}: {contact.number}
               </p>
               <DeleteButt
                 type="button"

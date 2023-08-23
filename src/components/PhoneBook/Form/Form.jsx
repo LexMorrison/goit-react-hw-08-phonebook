@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContactsThunk, addContactThunk } from 'redux/ContactAsyncThunk';
 import { selectContacts } from 'redux/selectors';
+import Notiflix from 'notiflix';
 import {
   FormStyle,
   FormInput,
@@ -39,11 +40,7 @@ function Form() {
         contact => contact.name.toLowerCase() === data.name.toLowerCase()
       )
     ) {
-      alert(`${data.name} is already in contacts! `);
-      return;
-    }
-    if (contacts.find(contact => contact.phone === data.phone)) {
-      alert(`${data.number} is already in contacts! `);
+      Notiflix.Notify.warning(`${data.name} is already in contacts! `);
       return;
     }
     dispatch(addContactThunk(data));
@@ -53,7 +50,7 @@ function Form() {
     evt.preventDefault();
     const contact = {
       name: name,
-      phone: phone,
+      number: phone,
     };
 
     onAddContact(contact);
