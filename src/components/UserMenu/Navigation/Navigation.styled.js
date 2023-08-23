@@ -25,7 +25,8 @@ export const Linkk = styled(Link)`
 `;
 
 export const Title = styled.h1`
-  margin-left: 45px;
+  text-align: center;
+  margin-top: 45px;
 `;
 
 export const TitleName = styled.span`
