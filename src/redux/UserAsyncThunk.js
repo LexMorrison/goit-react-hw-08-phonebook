@@ -51,6 +51,9 @@ export const currentInfoUserThunk = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const sessionToken = getState().auth.token;
+      if (!sessionToken) {
+        return rejectWithValue('Please Login');
+      }
       token.set(sessionToken);
       const data = await currentInfoUser();
       return data;
